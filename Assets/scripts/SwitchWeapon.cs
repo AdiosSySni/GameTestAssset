@@ -24,11 +24,11 @@ public class SwitchWeapon : MonoBehaviour
                     Debug.Log("1");
                 }
 
-                //else
-                //{
-                //    AvailableWeapons[AvailableWeapons.Count - 1].SetActive(true);
-                //    Debug.Log("2");
-                //}
+                else
+                {
+                    AvailableWeapons[AvailableWeapons.Count - 1].SetActive(true);
+                    Debug.Log("2");
+                }
             }
         }
     }
