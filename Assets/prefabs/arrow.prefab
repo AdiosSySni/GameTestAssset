@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fe32a050587c84494c5eabb4ec5fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 72
+  destroyEffect: {fileID: 4735747482101710712, guid: 7424b0f5e024a5646a3a712155bb1687, type: 3}
 --- !u!50 &1910011901903588075
 Rigidbody2D:
   serializedVersion: 4

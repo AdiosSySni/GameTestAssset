@@ -363,6 +363,8 @@
 "Assets/scripts/HeroRay.cs"
 "Assets/scripts/Player.cs"
 "Assets/scripts/spawner.cs"
+"Assets/scripts/SwitchWeapon.cs"
+"Assets/scripts/SwordPickUp.cs"
 "Assets/SPUM/Sample/Script/PlayerManager.cs"
 "Assets/SPUM/Sample/Script/PlayerObj.cs"
 "Assets/SPUM/Script/SPUM_Manager.cs"

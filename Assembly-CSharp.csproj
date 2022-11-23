@@ -67,8 +67,10 @@
     <Compile Include="Assets\SPUM\Script\SPUM_SpriteList.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
+    <Compile Include="Assets\scripts\SwordPickUp.cs" />
     <Compile Include="Assets\scripts\enemy.cs" />
     <Compile Include="Assets\scripts\FallingCheck.cs" />
+    <Compile Include="Assets\scripts\SwitchWeapon.cs" />
     <Compile Include="Assets\Scenes\player.cs" />
     <Compile Include="Assets\scripts\BonusHealthScript.cs" />
     <Compile Include="Assets\SPUM\Script\SPUM_TexutreList.cs" />

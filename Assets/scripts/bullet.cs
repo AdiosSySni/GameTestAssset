@@ -54,11 +54,11 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     private float speed = 30f;
-    private int damage = 20;
-    private float distance = 50;
+    private int damage = 5;
+    private float distance = 0;
     private int lifetime = 10;
     public LayerMask whatIsSolid;
-  
+    public GameObject destroyEffect;
 
     void Start()
     {
@@ -74,15 +74,16 @@ public class bullet : MonoBehaviour
 
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                hitInfo.collider.GetComponent<EnemyScript>().ChangeHealthEnemy(damage);
-                
+                hitInfo.collider.GetComponent<EnemyScript>().ChangeHealthEnemy(-damage);
                 Debug.Log("HitEnemy");
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
                 DestroyBullet();
             }
             if (hitInfo.collider.CompareTag("ground"))
             {
-               
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
                 DestroyBullet();
+                Debug.Log("HitGround");
             }
         }
         transform.Translate(Vector2.up * speed * Time.deltaTime);

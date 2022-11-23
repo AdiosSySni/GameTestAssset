@@ -3,15 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - bonus
+  - enemy
+  - PlayerWeapon
+  - healthPotion
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

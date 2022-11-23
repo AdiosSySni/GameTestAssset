@@ -26,25 +26,25 @@ public class Hero : MonoBehaviour
     public GameObject panelPause;
     public GameObject panelHealth;
     public EnemyScript enemy;
+    // public GameObject bow;
+    [Header("Weapons")]
 
-
-   
     private bool _isGrounded;
     public static Rigidbody2D _rb;
     private int _score = 10;
-    private int _minHealth=10;
+    private int _minHealth = 10;
+    public GameObject arrow;
     private int _maxHealth = 20;
-    private  int _health;
+    private int _health;
     private float moveInput;
-    private  Animator anim;
-    public bool facingRight = true;
-
+    private Animator anim;
+    private bool facingRight = true;
     private void Awake()
     {
         _health = _maxHealth;
     }
     void Start()
-    {        
+    {
         anim = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
         healthDisplay.text = "" + _health;
@@ -60,12 +60,12 @@ public class Hero : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if(_health<= _minHealth)
+        if (_health <= _minHealth)
         {
             panelHealth.SetActive(true);
         }
 
-        else if(_health >= _minHealth)
+        else if (_health >= _minHealth)
         {
             panelHealth.SetActive(false);
         }
@@ -74,13 +74,14 @@ public class Hero : MonoBehaviour
         _rb.velocity = new Vector2(moveInput * Speed, _rb.velocity.y);
         if (facingRight == false && _rb.velocity.x < 0)
         {
+
+
             Flip();
-            
         }
         else if (facingRight == true && _rb.velocity.x > 0)
         {
+
             Flip();
-            
         }
 
         if (moveInput == 0)
@@ -95,18 +96,16 @@ public class Hero : MonoBehaviour
     }
     public void Flip()
     {
-        
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
-       
     }
     private void Update()
     {
         healthDisplay.text = "" + _health;
         if (_health > 20)
-        {       
+        {
             _health = _maxHealth;
         }
         _isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
@@ -128,19 +127,20 @@ public class Hero : MonoBehaviour
             aura.SetActive(true);
 
         }
+   
         else
         {
             Speed = 15f;
             aura.SetActive(false);
         }
-     
+
     }
     public void ChangeHealth(int healthValue)
     {
-            _health += healthValue;
-            healthDisplay.text = "" + _health;
-    } 
-    
+        _health += healthValue;
+        healthDisplay.text = "" + _health;
+    }
+
     public void PlusScore(int scoreValue)
     {
         _score += scoreValue;
@@ -185,7 +185,7 @@ public class Hero : MonoBehaviour
 
     public void ChangeHealthEnemyAnim()
     {
-        enemy.ChangeHealthEnemy(-2);       
+        enemy.ChangeHealthEnemy(-2);
     }
-
+   
 }
